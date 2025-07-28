@@ -1,4 +1,5 @@
 document.getElementById('downloadCvBtn').addEventListener('click', function () {
+  console.log("download cv ...");
   const link = document.createElement('a');
   link.href = 'frontend/js/cv.pdf';         // PDF path
   link.download = 'cv-alvin-haristianto-07-2025.pdf';     // Desired download filename
