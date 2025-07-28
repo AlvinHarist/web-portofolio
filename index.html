@@ -183,6 +183,19 @@
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="frontend/js/script.js"></script>
+
+        <script>
+            document.getElementById('downloadCvBtn').addEventListener('click', function () {
+                  console.log("download cv ...");
+                  const link = document.createElement('a');
+                  link.href = 'frontend/js/cv.pdf';         // PDF path
+                  link.download = 'cv-alvin-haristianto-07-2025.pdf';     // Desired download filename
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+            });
+        </script>
+        
         <!-- Swiper JS -->
         <script>
         const swiper = new Swiper('.swiper', {
