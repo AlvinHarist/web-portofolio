@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 .almendra-regular {
@@ -330,6 +331,23 @@ transition: .6s ease-in-out;
 
 #downloadCvBtn:hover {
   background-color: rgb(71, 49, 18);
+}
+
+.linkedin-card-button {
+  background-color: rgb(10, 102, 194);
+  color: white;
+  font-weight: bold;
+  padding: 14px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.linkedin-card-button:hover {
+  background-color: white;
+  color: rgb(10, 102, 194);
 }
 
 .sub-title {
