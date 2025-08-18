@@ -545,6 +545,10 @@ body {
   
 }
 
+.container-skill {
+  padding: 50px;
+}
+
 .skill-title {
   justify-content: center;
   align-items: center;
@@ -554,6 +558,23 @@ body {
   font-size: 50px;
   padding-top: 50px;
   padding-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding-right: 250px;
+  padding-left: 250px;
+}
+
+.skill-box {
+  background: #104707;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
 .tools-list {
