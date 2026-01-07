@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "title": "Collaboration Project Arkavidia 9.0 2025",
+        "shortDescription": "Deskripsi singkat tentang project ini yang menjelaskan fitur utama dan teknologi yang digunakan.",
+        "images": [
+            "frontend/assets/projects/1/1.png",
+            "frontend/assets/projects/1/2.png",
+            "frontend/assets/projects/1/3.png"
+        ],
+        "fullDescription": {
+            "overview": "Deskripsi lengkap project 1. Jelaskan latar belakang, tujuan, dan hasil dari project ini.",
+            "technologies": "HTML, CSS, JavaScript, React, Node.js, MongoDB",
+            "features": [
+                "Feature 1",
+                "Feature 2",
+                "Feature 3"
+            ]
+        }
+    }
+]

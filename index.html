@@ -189,19 +189,8 @@
                         <div class="skill-title">
                                 Projects
                         </div>
-                        <div class="list-of-projects">
-                            <div class="project-card">
-                                Project 1
-                            </div>
-                            <div class="project-card">
-                                Project 2
-                            </div>
-                            <div class="project-card">
-                                Project 3
-                            </div>
-                            <div class="project-card">
-                                Project 4
-                            </div>
+                        <div class="list-of-projects" id="projectsContainer">
+                            <!-- Projects will be loaded dynamically -->
                         </div>
                     </div>
 
@@ -218,9 +207,35 @@
 
             </div>
 
+            <!-- Project Modal -->
+            <div class="project-modal" id="projectModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-left">
+                            <div class="modal-swiper">
+                                <div class="modal-swiper-wrapper">
+                                    <img src="frontend/assets/projects/1/1.png" class="modal-img" alt="Project Image">
+                                </div>
+                                <div class="modal-nav-prev">‹</div>
+                                <div class="modal-nav-next">›</div>
+                            </div>
+                        </div>
+                        <div class="modal-right">
+                            <h2 class="modal-title">Project Title</h2>
+                            <div class="modal-description">
+                                <p>Deskripsi lengkap project akan ditampilkan di sini. Jelaskan detail teknologi, fitur, tantangan, dan solusi yang diterapkan dalam project ini.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
         <script src="frontend/js/script.js"></script>
 
         <script>
@@ -270,7 +285,141 @@
         });
         </script>
 
+        <script>
+            let projectsData = [];
+            let currentModalImageIndex = 0;
+            let currentProjectImages = [];
+            const modal = document.getElementById('projectModal');
+            const closeModal = document.querySelector('.close-modal');
 
+            // Load projects data from JSON
+            async function loadProjects() {
+                try {
+                    const response = await fetch('frontend/js/projects-data.json');
+                    projectsData = await response.json();
+                    renderProjects();
+                } catch (error) {
+                    console.error('Error loading projects:', error);
+                }
+            }
+
+            // Render project cards dynamically
+            function renderProjects() {
+                const container = document.getElementById('projectsContainer');
+                container.innerHTML = '';
+
+                projectsData.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    card.setAttribute('data-project', project.id);
+
+                    const imageContainer = document.createElement('div');
+                    imageContainer.className = 'project-image-container';
+
+                    project.images.forEach((img, index) => {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = img;
+                        imgElement.className = `project-img ${index === 0 ? 'active' : ''}`;
+                        imgElement.alt = project.title;
+                        imageContainer.appendChild(imgElement);
+                    });
+
+                    const info = document.createElement('div');
+                    info.className = 'project-info';
+                    info.innerHTML = `
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.shortDescription}</p>
+                    `;
+
+                    card.appendChild(imageContainer);
+                    card.appendChild(info);
+                    container.appendChild(card);
+
+                    // Add hover effect
+                    setupCardHover(card);
+                    
+                    // Add click event
+                    card.addEventListener('click', () => openModal(project));
+                });
+            }
+
+            // Setup hover effect for card
+            function setupCardHover(card) {
+                const images = card.querySelectorAll('.project-img');
+                let currentIndex = 0;
+                let interval;
+
+                card.addEventListener('mouseenter', () => {
+                    interval = setInterval(() => {
+                        images[currentIndex].classList.remove('active');
+                        currentIndex = (currentIndex + 1) % images.length;
+                        images[currentIndex].classList.add('active');
+                    }, 1000);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    clearInterval(interval);
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = 0;
+                    images[0].classList.add('active');
+                });
+            }
+
+            // Open modal with project data
+            function openModal(project) {
+                currentProjectImages = project.images;
+                currentModalImageIndex = 0;
+
+                document.querySelector('.modal-title').textContent = project.title;
+                
+                const descriptionHTML = `
+                    <h3>Overview</h3>
+                    <p>${project.fullDescription.overview}</p>
+                    <h3>Technologies Used</h3>
+                    <p>${project.fullDescription.technologies}</p>
+                    <h3>Key Features</h3>
+                    <ul>
+                        ${project.fullDescription.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                `;
+                
+                document.querySelector('.modal-description').innerHTML = descriptionHTML;
+                updateModalImage();
+                modal.style.display = 'block';
+            }
+
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Modal image navigation
+            document.querySelector('.modal-nav-prev').addEventListener('click', () => {
+                currentModalImageIndex = (currentModalImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+                updateModalImage();
+            });
+
+            document.querySelector('.modal-nav-next').addEventListener('click', () => {
+                currentModalImageIndex = (currentModalImageIndex + 1) % currentProjectImages.length;
+                updateModalImage();
+            });
+
+            function updateModalImage() {
+                const modalImg = document.querySelector('.modal-img');
+                modalImg.src = currentProjectImages[currentModalImageIndex];
+            }
+
+            // Load projects when page loads
+            loadProjects();
+        </script>
+
+        
     </body>
 
 </html>
